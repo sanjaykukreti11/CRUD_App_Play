@@ -1,0 +1,22 @@
+@import views.html.helper._
+@(userForm : Form[Users]  , users: Users)
+<html>
+
+    <head>
+        <title>Fill the details</title>
+    </head>
+
+    <body>
+        <h4>Update the data of user having id @users.id</h4>
+        @helper.form(action = routes.UserController.update() ){
+            @helper.inputText( userForm("id") )
+
+            @helper.inputText(userForm("first_name"))
+            @helper.inputText(userForm("last_name"))
+            @helper.inputText(userForm("age"))
+            @helper.inputText(userForm("phone"))
+            <input type="submit" value="edit user">
+            }
+    </body>
+
+</html>

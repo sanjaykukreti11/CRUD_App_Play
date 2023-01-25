@@ -1,0 +1,26 @@
+@import views.html.helper._
+@(userForm : Form[Users], message : String)
+
+
+
+
+<html>
+
+    <head>
+        <title>Fill the details</title>
+    </head>
+
+    <body>
+
+    @helper.form(action = routes.UserController.save() ){
+            @helper.inputText( userForm("id") )
+
+            @helper.inputText(userForm("first_name"))
+            @helper.inputText(userForm("last_name"))
+            @helper.inputText(userForm("age"))
+            @helper.inputText(userForm("phone"))
+            <input type="submit" value="create user">
+        }
+    </body>
+
+</html>
